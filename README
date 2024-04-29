@@ -1,0 +1,28 @@
+Features
+========
+
+    *   Pages and blog generation
+    *   Simplest theming without logic inside templates
+
+Installation
+============
+
+    $ git clone https://m6v.ru/git/hc
+    $ make
+    $ sudo make install
+
+NOTE: C99 compatible compiler is required.
+
+Usage
+=====
+
+For reference see example directory inside this repository:
+
+    $ cd example
+    $ make debug
+
+Run hc inside your own site directory:
+
+    $ hc
+
+By default output files will be located in the public directory.
