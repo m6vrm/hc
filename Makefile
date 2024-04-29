@@ -50,15 +50,15 @@ uninstall:
 	rm -f "$(DESTDIR)$(BINDIR)/hc"
 
 format:
-	-clang-format -i src/*.c
+	clang-format -i src/*.c
 
 check:
-	-codespell \
+	codespell \
 		--skip="*.html"
 
-	-clang-tidy src/*.c
+	clang-tidy src/*.c
 
-	-cppcheck \
+	cppcheck \
 		--std=c99 \
 		--enable=all \
 		--suppress=unmatchedSuppression \
@@ -71,10 +71,10 @@ check:
 		src
 
 iwyu:
-	-include-what-you-use src/*.c
+	include-what-you-use src/*.c
 
 valgrind: debug
-	-cd example && valgrind \
+	cd example && valgrind \
 		--leak-check=full \
 		--show-leak-kinds=all \
 		--track-origins=yes \

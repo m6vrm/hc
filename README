@@ -44,14 +44,7 @@ Arguments
 Contribution
 ============
 
-    *   Run tests:
-
-        $ make clean test
-
-    *   Run static checks:
-
-        $ make check
-
-    *   Run valgrind:
-
-        $ make clean valgrind
+    $ make format           # format source code
+    $ make clean test       # run tests
+    $ make check            # run static checks
+    $ make clean valgrind   # run valgrind
