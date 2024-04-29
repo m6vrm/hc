@@ -8,6 +8,7 @@ Installation
 ============
 
     $ git clone https://m6v.ru/git/hc
+    $ cd hc
     $ make
     $ sudo make install
 
