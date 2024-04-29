@@ -1,18 +1,17 @@
 #define _DEFAULT_SOURCE
 
-#include <assert.h>         // for assert
-#include <dirent.h>         // for closedir, opendir, readdir, DIR
-#include <stdbool.h>        // for true, bool, false
-#include <stddef.h>         // for size_t, ptrdiff_t
-#include <stdio.h>          // for NULL, fprintf, stderr, size_t, fclose
-#include <stdlib.h>         // for free, EXIT_FAILURE, EXIT_SUCCESS
-#include <string.h>         // for strerror, strcmp, strlen, strchr
-#include <sys/dirent.h>     // for dirent, DT_DIR, DT_REG
-#include <sys/errno.h>      // for errno, EEXIST
-#include <sys/stat.h>       // for mkdir
-#include <sys/syslimits.h>  // for PATH_MAX, NAME_MAX
-#include <sys/types.h>      // for S_IRWXU, SEEK_END, SEEK_SET
-#include <unistd.h>         // for optarg, getopt
+#include <assert.h>     // for assert
+#include <dirent.h>     // for closedir, opendir, readdir, DIR
+#include <dirent.h>     // for dirent, DT_DIR, DT_REG
+#include <errno.h>      // for errno, EEXIST
+#include <stdbool.h>    // for true, bool, false
+#include <stddef.h>     // for size_t, ptrdiff_t
+#include <stdio.h>      // for NULL, fprintf, stderr, size_t, fclose
+#include <stdlib.h>     // for free, EXIT_FAILURE, EXIT_SUCCESS
+#include <string.h>     // for strerror, strcmp, strlen, strchr
+#include <sys/stat.h>   // for mkdir
+#include <sys/types.h>  // for S_IRWXU, SEEK_END, SEEK_SET
+#include <unistd.h>     // for optarg, getopt
 
 #define VERSION 1.0
 
@@ -360,7 +359,6 @@ static struct conf conf_alloc(char *path) {
 static void conf_free(struct conf conf) { free(conf.buf); }
 
 static char *conf_find(struct conf conf, size_t offset, char *key, char *val) {
-    assert(conf.buf != NULL);
     assert(key != NULL);
 
     for (size_t i = offset; i < conf.pair_count; ++i) {
