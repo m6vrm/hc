@@ -40,3 +40,18 @@ Arguments
     -p      <path>  create or edit page at <input dir>/<path>
     -b              create or edit blog post
     -v              print version
+
+Contribution
+============
+
+    *   Run tests:
+
+        $ make clean test
+
+    *   Run static checks:
+
+        $ make check
+
+    *   Run valgrind:
+
+        $ make clean valgrind
