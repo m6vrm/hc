@@ -907,6 +907,7 @@ static char *plugin_base_alloc(struct page *page) {
     char *blog_list = plugin_blog_list_alloc(page);
     char *menu = plugin_menu_alloc(page);
     char *desc = page_conf(page, "meta.description", NULL);
+    char *lang = page_conf(page, "language", "en");
 
     char title[PLUGIN_BASE_TITLE_MAX] = "";
     char *site_name = page_conf(page, "site.name", NULL);
@@ -929,6 +930,7 @@ static char *plugin_base_alloc(struct page *page) {
         {"{{ title }}", title},      //
         {"{{ name }}", site_name},   //
         {"{{ root }}", s_root_url},  //
+        {"{{ language }}", lang},    //
     };
 
     char *str = strsub_alloc(tpl, pairs, ARRAY_LEN(pairs));
