@@ -54,9 +54,6 @@ format:
 	clang-format -i $(SRC)
 
 check:
-	codespell --skip="*.html"
-	clang-tidy $(SRC)
-
 	cppcheck \
 		--std=c99 \
 		--enable=all \
@@ -68,6 +65,9 @@ check:
 		--inconclusive \
 		--quiet \
 		src
+
+	clang-tidy $(SRC)
+	codespell --skip="*.html"
 
 iwyu:
 	include-what-you-use $(SRC)
