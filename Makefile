@@ -55,15 +55,16 @@ format:
 
 check:
 	cppcheck \
+		--language=c \
 		--std=c99 \
 		--enable=all \
+		--check-level=exhaustive \
+		--inconclusive \
+		--quiet \
 		--suppress=unmatchedSuppression \
 		--suppress=missingIncludeSystem \
 		--suppress=constParameterPointer \
 		--suppress=constVariablePointer \
-		--check-level=exhaustive \
-		--inconclusive \
-		--quiet \
 		src
 
 	clang-tidy $(SRC)
