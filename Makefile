@@ -70,6 +70,9 @@ check:
 		--quiet \
 		src
 
+iwyu:
+	-include-what-you-use src/*.c
+
 valgrind: debug
 	-cd example && valgrind \
 		--leak-check=full \
@@ -84,4 +87,4 @@ valgrind: debug
 .PHONY: build clean
 .PHONY: run test example
 .PHONY: install uninstall
-.PHONY: format check valgrind
+.PHONY: format check iwyu valgrind
