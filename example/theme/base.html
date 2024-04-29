@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="{{ root }}/css/main.css">
+</head>
+
+<body>
+    <header>
+        <pre><strong><a href="{{ root }}/index.html">                          /\\\\                 
+                       /\\\\///                 
+                     /\\\///                    
+ /\\\\\  /\\\\\     /\\\\\\\\\\\    /\\\    /\\\
+/\\\///\\\\\///\\\  /\\\\///////\\\ \//\\\  /\\\
+\/\\\ \//\\\  \/\\\ \/\\\      \//\\\ \//\\\/\\\
+ \/\\\  \/\\\  \/\\\ \//\\\      /\\\   \//\\\\\
+  \/\\\  \/\\\  \/\\\  \///\\\\\\\\\/     \//\\\
+   \///   \///   \///     \/////////        \///</a></strong></pre>
+        <nav>
+            <ul>
+                {{ menu }}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{ content }}
+    </main>
+    <footer>
+        {{ footer }}
+        <img src="{{ root }}/images/vincent.png" class="vincent">
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+#!/bin/sh
+
+in="content"
+out="public"
+theme="theme"
+root=""
+page=""
+
+pflag=0
+bflag=0
+
+while getopts "i:o:t:r:p:bv" opt
+do
+    case $opt in
+    i) in="$OPTARG";;
+    o) out="$OPTARG";;
+    t) theme="$OPTARG";;
+    r) root="$OPTARG";;
+    p) pflag=1; page="$OPTARG";;
+    b) bflag=1;;
+    v)
+        # print version
+        hcx -v
+        exit 0
+        ;;
+    ?)
+        # print usage
+        cat <<EOF
+Usage: $(basename $0) [-i input dir] [-o output dir] [-t theme dir] [-r root url] [-p new page] [-b] [-v]
+
+	-i	<path>	input dir, default "content"
+	-o	<path>	output dir, default "public"
+	-t	<path>	theme dir, default "theme"
+	-r	<url>	root url, default ""
+	-p	<path>	create or edit page at <input dir>/<path>
+	-b		create or edit blog post
+	-v		print version
+EOF
+        exit 1
+        ;;
+    esac
+done
+
+if [ "$pflag" -eq 1 ]; then
+    # create page
+    file="${in%%/}/${page}.html"
+    mkdir -p $(dirname "$file")
+    $EDITOR "$file"
+elif [ "$bflag" -eq 1 ]; then
+    # create blog post
+    file="${in%%/}/blog/$(date +%F).html"
+    mkdir -p $(dirname "$file")
+    $EDITOR "$file"
+fi
+
+# generate
+hcx -i "$in" -o "$out" -t "$theme" -r "$root"
+
+# copy static
+cp -a static/* "$out" 2>/dev/null || :
