@@ -16,7 +16,7 @@ NOTE: C99 compatible compiler is required.
 Usage
 =====
 
-Run hc inside your own site directory:
+Run hc inside your site directory:
 
     $ hc
 

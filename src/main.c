@@ -1,17 +1,16 @@
 #define _DEFAULT_SOURCE
 
-#include <assert.h>     // for assert
-#include <dirent.h>     // for closedir, opendir, readdir, DIR
-#include <dirent.h>     // for dirent, DT_DIR, DT_REG
-#include <errno.h>      // for errno, EEXIST
-#include <stdbool.h>    // for true, bool, false
-#include <stddef.h>     // for size_t, ptrdiff_t
-#include <stdio.h>      // for NULL, fprintf, stderr, size_t, fclose
-#include <stdlib.h>     // for free, EXIT_FAILURE, EXIT_SUCCESS
-#include <string.h>     // for strerror, strcmp, strlen, strchr
-#include <sys/stat.h>   // for mkdir
-#include <sys/types.h>  // for S_IRWXU, SEEK_END, SEEK_SET
-#include <unistd.h>     // for optarg, getopt
+#include <assert.h>    // for assert
+#include <dirent.h>    // for closedir, opendir, readdir, dirent, DIR, DT_DIR
+#include <errno.h>     // for errno, EEXIST
+#include <stdbool.h>   // for true, bool, false
+#include <stddef.h>    // for size_t, ptrdiff_t
+#include <stdio.h>     // for NULL, fprintf, stderr, size_t, fclose
+#include <stdlib.h>    // for free, EXIT_FAILURE, EXIT_SUCCESS
+#include <string.h>    // for strerror, strcmp, strlen, strchr
+#include <sys/stat.h>  // for mkdir
+#include <sys/types.h> // for S_IRWXU, SEEK_END, SEEK_SET
+#include <unistd.h>    // for optarg, getopt
 
 #define VERSION 1.0
 

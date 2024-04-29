@@ -9,8 +9,9 @@ CFLAGS	+= -Wall \
 PREFIX	= /usr/local
 BINDIR	= $(PREFIX)/bin
 
-OBJS	= $(OUT)/main.o
-DEPS	= $(OBJS:.o=.d)
+SRC	= $(wildcard src/*.c)
+OBJ	= $(OUT)/main.o
+DEP	= $(OBJ:.o=.d)
 
 release: CFLAGS += -O2 -DNDEBUG
 release: build
@@ -20,16 +21,25 @@ debug: build
 
 build: $(OUT)/$(TARGET)
 
-$(OUT)/$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
+$(OUT)/$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $@ $(LDFLAGS) $(LDLIBS)
 
 $(OUT)/%.o: src/%.c
 	mkdir -p "$(OUT)"
 	$(CC) $(CFLAGS) -std=c99 -MMD -c $< -o $@
 
 clean:
-	rm -rf $(OBJS) $(DEPS) "$(OUT)/$(TARGET)"
-	rm -rf "example/public"
+	$(RM) -r $(OBJ) $(DEP) "$(OUT)/$(TARGET)"
+	$(RM) -r "example/public"
+
+install:
+	install -d "$(DESTDIR)$(BINDIR)"
+	install -m 755 "$(OUT)/$(TARGET)" "$(DESTDIR)$(BINDIR)/$(TARGET)"
+	install -m 755 "dist/hc" "$(DESTDIR)$(BINDIR)/hc"
+
+uninstall:
+	$(RM) "$(DESTDIR)$(BINDIR)/$(TARGET)"
+	$(RM) "$(DESTDIR)$(BINDIR)/hc"
 
 run: debug
 	"./$(OUT)/$(TARGET)"
@@ -40,23 +50,12 @@ test: run
 example: debug
 	cd example && "../$(OUT)/$(TARGET)"
 
-install:
-	mkdir -p "$(DESTDIR)$(BINDIR)"
-	install -m755 "$(OUT)/$(TARGET)" "$(DESTDIR)$(BINDIR)/$(TARGET)"
-	install -m755 "dist/hc" "$(DESTDIR)$(BINDIR)/hc"
-
-uninstall:
-	rm -f "$(DESTDIR)$(BINDIR)/$(TARGET)"
-	rm -f "$(DESTDIR)$(BINDIR)/hc"
-
 format:
-	clang-format -i src/*.c
+	clang-format -i $(SRC)
 
 check:
-	codespell \
-		--skip="*.html"
-
-	clang-tidy src/*.c
+	codespell --skip="*.html"
+	clang-tidy $(SRC)
 
 	cppcheck \
 		--std=c99 \
@@ -71,7 +70,7 @@ check:
 		src
 
 iwyu:
-	include-what-you-use src/*.c
+	include-what-you-use $(SRC)
 
 valgrind: debug
 	cd example && valgrind \
@@ -81,10 +80,10 @@ valgrind: debug
 		--verbose \
 		"../$(OUT)/$(TARGET)"
 
--include $(DEPS)
+-include $(DEP)
 
 .PHONY: release debug
 .PHONY: build clean
-.PHONY: run test example
 .PHONY: install uninstall
+.PHONY: run test example
 .PHONY: format check iwyu valgrind
