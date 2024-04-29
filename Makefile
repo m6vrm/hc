@@ -68,7 +68,12 @@ check:
 		src
 
 	clang-tidy $(SRC)
-	codespell --skip="*.html"
+	codespell \
+		src \
+		dist \
+		Makefile \
+		README \
+		LICENSE
 
 iwyu:
 	include-what-you-use $(SRC)
