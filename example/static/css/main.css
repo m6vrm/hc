@@ -5,6 +5,7 @@ body > header pre { font-size: 10px; line-height: 1; }
 body > header pre a { text-decoration: none; }
 nav li { display: inline-block; font-size: 1.2em; }
 
+h1, h2, h3, h4 { font-weight: lighter; }
 main pre, code, time { font: 0.8em/1.5 Courier, monospace; }
 code { padding: 4px; background-color: floralwhite; }
 img { max-width: 100%; }
