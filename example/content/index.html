@@ -4,13 +4,27 @@ site.name = m6v
 footer = <em><a href="https://m6v.ru/git/hc">source</a></em>
 ---
 
-<ul>
-    <li>
-        <a href="{{ root }}/projects/project-1/index.html">Project 1</a><br>
-        Project 1 description
-    </li>
-    <li>
-        <a href="{{ root }}/projects/project-2/index.html">Project 2</a><br>
-        Project 2 description
-    </li>
-</ul>
+<style>
+@media only screen and (min-width: 768px) {
+    main { display: flex; }
+}
+</style>
+<div style="flex: 50%;">
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <a href="{{ root }}/projects/project-1/index.html">Project 1</a><br>
+            Project 1 description
+        </li>
+        <li>
+            <a href="{{ root }}/projects/project-2/index.html">Project 2</a><br>
+            Project 2 description
+        </li>
+    </ul>
+</div>
+<div style="flex: 50%;">
+    <h2>Notes</h2>
+    <ul>
+        {{ blog }}
+    </ul>
+</div>
