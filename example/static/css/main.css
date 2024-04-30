@@ -1,15 +1,15 @@
-body { max-width: 768px; margin: auto; padding: 12px; font: 18px/1.5 Charter, Georgia, "Times New Roman", serif; }
+body { max-width: 600px; margin: auto; padding: 12px; font: 16px/1.5 Charter, Georgia, "Times New Roman", serif; }
 
 body > header { text-align: center; }
 body > header pre { font-size: 10px; line-height: 1; }
 body > header pre a { text-decoration: none; }
 nav li { display: inline-block; font-size: 1.2em; }
 
-main pre, code { font: 0.8em/1.5 Courier, monospace; }
+main pre, code, time { font: 0.8em/1.5 Courier, monospace; }
 code { padding: 4px; background-color: floralwhite; }
 img { max-width: 100%; }
 
 body > footer { font-size: 0.8em; text-align: right; }
 
 .vincent { width: 80px; opacity: 0.5; position: fixed; bottom: 0; right: 0; }
-@media only screen and (max-width: 928px) { .vincent { display: none; } }
+@media only screen and (max-width: 760px) { .vincent { display: none; } }
