@@ -72,7 +72,7 @@ check:
 		src \
 		dist \
 		Makefile \
-		README \
+		README.md \
 		LICENSE
 
 iwyu:

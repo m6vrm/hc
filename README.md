@@ -1,8 +1,8 @@
 Features
 ========
 
-    *   Pages and blog generation
-    *   Simple theming without logic inside templates
+*   Pages and blog generation
+*   Simple theming without logic inside templates
 
 Installation
 ============
