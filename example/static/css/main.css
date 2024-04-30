@@ -1,7 +1,7 @@
 body { max-width: 768px; margin: auto; padding: 12px; font: 18px/1.5 Charter, Georgia, "Times New Roman", serif; }
 
 body > header { text-align: center; }
-body > header pre { font-size: 12px; line-height: 1; }
+body > header pre { font-size: 10px; line-height: 1; }
 body > header pre a { text-decoration: none; }
 nav li { display: inline-block; font-size: 1.2em; }
 
