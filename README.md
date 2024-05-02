@@ -2,7 +2,7 @@ Features
 ========
 
 *   Pages and blog generation
-*   Simple theming without logic inside templates
+*   Theming without logic inside templates
 
 Installation
 ============
@@ -32,17 +32,6 @@ For reference see example directory inside this repository:
 
     $ cd example
     $ make debug
-
-Arguments
----------
-
-    -i      <path>  input dir, default "content"
-    -o      <path>  output dir, default "public"
-    -t      <path>  theme dir, default "theme"
-    -r      <url>   root url, default ""
-    -p      <path>  create or edit page at <input dir>/<path>
-    -b              create or edit blog post
-    -v              print version
 
 Contribution
 ============
