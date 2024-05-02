@@ -23,6 +23,8 @@ Run hc inside your site directory:
 
 By default output files will be located in the public directory.
 
+NOTE: Output directory will be removed before generating site files.
+
 Example
 -------
 
