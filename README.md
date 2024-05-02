@@ -1,3 +1,5 @@
+Static site generator in C.
+
 Features
 ========
 
