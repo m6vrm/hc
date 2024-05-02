@@ -1,5 +1,5 @@
-body { max-width: 680px; margin: auto; padding: 12px;
-    font: 20px/1.5 Charter, Georgia, "Times New Roman", serif; }
+body { max-width: 600px; margin: auto; padding: 12px;
+    font: 18px/1.5 Charter, Georgia, "Times New Roman", serif; }
 body > header { text-align: center; }
 nav li { display: inline-block; font-size: 1.2em; }
 main pre, code, time { font: 0.8em/1.5 Courier, monospace; }
@@ -7,4 +7,4 @@ code { padding: 4px; background-color: floralwhite; }
 img { max-width: 100%; }
 body > footer { margin-bottom: 25dvh; font-size: 0.8em; text-align: right; }
 .vincent { width: 80px; opacity: 0.5; position: fixed; bottom: 0; right: 0; }
-@media only screen and (max-width: 840px) { .vincent { display: none; } }
+@media only screen and (max-width: 760px) { .vincent { display: none; } }
