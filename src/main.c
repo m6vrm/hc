@@ -12,7 +12,7 @@
 #include <sys/types.h> // for S_IRWXU, SEEK_END, SEEK_SET
 #include <unistd.h>    // for optarg, getopt
 
-#define VERSION 1.0.0
+#define VERSION 1.0.1
 
 #define QUOTE(...) #__VA_ARGS__
 #define STR(x) QUOTE(x)
@@ -78,8 +78,11 @@ static void strcpy_safe(char *dst, char *src, size_t size) {
 
 static void strcat_safe(char *dst, char *src, size_t size) {
     assert(dst != NULL);
-    assert(src != NULL);
     assert(size > 0);
+
+    if (src == NULL) {
+        return;
+    }
 
     size_t dst_len = strnlen(dst, size - 1);
     size_t src_len = strlen(src);
@@ -1043,6 +1046,9 @@ static void test_strcpy_safe(void) {
 static void test_strcat_safe(void) {
     char buf[8] = "hello";
     strcat_safe(buf, ", world", sizeof(buf));
+    assert(strcmp(buf, "hello, ") == 0);
+
+    strcat_safe(buf, NULL, sizeof(buf));
     assert(strcmp(buf, "hello, ") == 0);
 }
 

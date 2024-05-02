@@ -53,6 +53,9 @@ elif [ "$bflag" -eq 1 ]; then
     $EDITOR "$file"
 fi
 
+# cleanup
+rm -rf "$out"
+
 # generate
 hcx -i "$in" -o "$out" -t "$theme" -r "$root"
 
