@@ -833,17 +833,17 @@ static char *plugin_menu_alloc(struct page *page) {
     for (size_t i = 0; i < menu->conf.pair_count; i += 2) {
         char *title = conf_find(menu->conf, i, "title", NULL);
         char *page_url = conf_find(menu->conf, i, "url", NULL);
-        char *page_path = conf_find(menu->conf, i, "path", NULL);
+        char *page_path = conf_find(menu->conf, i, "page", NULL);
 
         char url[PATH_MAX] = "#";
-        if (page_url != NULL) {
-            strcpy_safe(url, page_url, sizeof(url));
-        } else if (page_path != NULL) {
+        if (page_path != NULL) {
             struct page *target_page = page_find(menu, page_path);
             if (target_page != NULL) {
                 strcpy_safe(url, s_root_url, sizeof(url));
                 page_url_append(target_page, url, sizeof(url));
             }
+        } else if (page_url != NULL) {
+            strcpy_safe(url, page_url, sizeof(url));
         }
 
         struct strsub_pair pairs[] = {
