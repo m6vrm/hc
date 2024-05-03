@@ -12,7 +12,7 @@
 #include <sys/types.h> // for S_IRWXU, SEEK_END, SEEK_SET
 #include <unistd.h>    // for optarg, getopt
 
-#define VERSION 1.1.1
+#define VERSION 1.1.2
 
 #define QUOTE(...) #__VA_ARGS__
 #define STR(x) QUOTE(x)
@@ -167,7 +167,7 @@ static char *strsub_alloc(char *src, struct strsub_pair *pairs,
         // substitute into second half of the buffer
         strsub(buf.buf + src_len + 1, buf.buf, pair->find, rep);
         // copy second half of the buffer to the first one
-        memcpy(buf.buf, buf.buf + src_len + 1, new_len);
+        memmove(buf.buf, buf.buf + src_len + 1, new_len);
         buf.buf[new_len] = '\0'; // ensure C-string
         src_len = new_len;
     }
