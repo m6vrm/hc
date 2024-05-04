@@ -1,4 +1,4 @@
-body { max-width: 600px; margin: auto; padding: 12px; font-size: 1.2em; line-height: 1.5; }
+body { max-width: 600px; margin: auto; padding: 12px; font-size: 1.2em; line-height: 1.2; }
 body > header { text-align: center; }
 nav li { display: inline-block; }
 code { padding: 4px; background-color: floralwhite; }
