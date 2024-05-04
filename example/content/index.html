@@ -5,15 +5,8 @@ footer = generated with <em><a href="https://m6v.ru/git/hc">hc</a></em>
 ---
 
 <style>
-main { display: flex; gap: 32px; }
-main ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+    main { display: flex; }
 </style>
-<div style="flex: 50%; text-align: right;">
-    <h2>Notes</h2>
-    <ul>
-        {{ blog }}
-    </ul>
-</div>
 <div style="flex: 50%;">
     <h2>Projects</h2>
     <ul>
@@ -25,5 +18,11 @@ main ul { list-style: none; padding: 0; display: flex; flex-direction: column; g
             <a href="{{ root }}/projects/project-2/index.html">Project 2</a><br>
             Project 2 description
         </li>
+    </ul>
+</div>
+<div style="flex: 50%;">
+    <h2>Notes</h2>
+    <ul>
+        {{ blog }}
     </ul>
 </div>
