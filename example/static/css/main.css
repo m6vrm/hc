@@ -3,5 +3,6 @@ body > header { text-align: center; }
 nav ul { padding: 0; margin: 0; }
 nav li { display: inline-block; }
 code { padding: 4px; background-color: floralwhite; }
+pre { font-size: 0.9em; }
 body img { max-width: 100%; }
 body > footer { margin-bottom: 25dvh; text-align: right; }
