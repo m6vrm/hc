@@ -3,7 +3,7 @@ Static site generator in C.
 Features
 ========
 
-*   Theming without logic inside templates
+*   Theming without logig in the templates
 *   Page configuration inheritance
 *   Page, blog and menu generation
 
