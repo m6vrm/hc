@@ -3,8 +3,9 @@ Static site generator in C.
 Features
 ========
 
-*   Pages and blog generation
 *   Theming without logic inside templates
+*   Page configuration inheritance
+*   Page, blog and menu generation
 
 Installation
 ============
@@ -23,9 +24,19 @@ Run hc inside your site directory:
 
     $ hc
 
-By default output files will be located in the public directory.
+By default input files should be located in the content directory, and output
+files will be located in the public directory.
 
-NOTE: Output directory will be removed before generating site files.
+NOTE: Output directory will be removed before generating output files.
+
+Inheritance
+-----------
+
+Page configuration fields will be searched on parent pages if they are not found
+for the current page. Parent page is defined using the following logic:
+
+*   For some/directory/page.html parent is some/directory/index.html
+*   For some/directory/index.html pareint is some/index.html
 
 Example
 -------
