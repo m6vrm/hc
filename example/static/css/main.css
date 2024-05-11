@@ -2,7 +2,7 @@ body { max-width: 600px; margin: auto; padding: 12px; font-size: 1.2em; line-hei
 body > header { text-align: center; }
 nav ul { padding: 0; margin: 0; }
 nav li { display: inline-block; }
-code { padding: 4px; background-color: floralwhite; }
+code { padding: 4px; background-color: floralwhite; white-space: nowrap; }
 pre { font-size: 0.9em; }
 body img { max-width: 100%; }
 body > footer { margin-bottom: 25dvh; text-align: right; }
