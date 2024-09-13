@@ -10,7 +10,7 @@ Features
 Installation
 ============
 
-    $ git clone https://m6v.ru/git/hc
+    $ git clone https://github.com/m6vrm/hc
     $ cd hc
     $ make
     $ sudo make install
