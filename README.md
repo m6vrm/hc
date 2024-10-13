@@ -1,28 +1,26 @@
 Static site generator in C.
 
 Features
-========
+--------
 
 *   Theming without logic in the templates
 *   Page configuration inheritance
 *   Page, blog and menu generation
 
 Installation
-============
+------------
 
-    $ git clone https://github.com/m6vrm/hc
-    $ cd hc
-    $ make
-    $ sudo make install
+    git clone https://github.com/m6vrm/hc
+    cd hc
+    make
+    sudo make install
 
 NOTE: C99 compatible compiler is required.
 
 Usage
-=====
+-----
 
-Run hc inside your site directory:
-
-    $ hc
+Run hc inside your site directory.
 
 By default input files should be located in the content directory, and output
 files will be located in the public directory.
@@ -43,13 +41,13 @@ Example
 
 For reference see example directory inside this repository:
 
-    $ cd example
-    $ make debug
+    cd example
+    make debug
 
-Contribution
-============
+Contributing
+------------
 
-    $ make format           # format source code
-    $ make clean test       # run tests
-    $ make check            # run static checks
-    $ make clean valgrind   # run valgrind
+    make format         # format source code
+    make clean test     # run tests
+    make check          # run static checks
+    make clean valgrind # run valgrind
